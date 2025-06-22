@@ -17,6 +17,7 @@ function LoginPage() {
         try {
             const res = await loginUser(form);
             alert("로그인 성공!");
+            // res.data.token: HTTP 응답의 body 부분에서 "token" 키에 해당하는 값을 의미
             localStorage.setItem("token", res.data.token);
         } catch(err) {
             alert("로그인 실패: " + err.response?.data?.message || "서버 오류");
