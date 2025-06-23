@@ -24,7 +24,8 @@ function RegisterPage() {
             alert("회원가입 성공!");
             navigate("/login");
         } catch(err) {
-            alert("회원가입 실패: " + err.response?.data?.message || "서버 오류");
+            console.error("회원가입 에러: ", err);
+            alert("회원가입 실패: " + (err.response?.data?.message || "서버 오류"));
         }
     };
 

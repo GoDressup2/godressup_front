@@ -20,7 +20,8 @@ function LoginPage() {
             // res.data.token: HTTP 응답의 body 부분에서 "token" 키에 해당하는 값을 의미
             localStorage.setItem("token", res.data.token);
         } catch(err) {
-            alert("로그인 실패: " + err.response?.data?.message || "서버 오류");
+            console.error("로그인 에러: ", err);
+            alert("로그인 실패: " + (err.response?.data?.message || "서버 오류"));
         }
     };
 
