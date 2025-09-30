@@ -29,6 +29,10 @@ function RegisterPage() {
         }
     };
 
+    const handleGoToLogin = () => {
+        navigate("/login");
+    };
+
     return (
         <form onSubmit={handleRegister} style={{ maxWidth: 400, margin: "2rem auto" }}>
             <h2>회원가입</h2>
@@ -37,6 +41,9 @@ function RegisterPage() {
             <InputField label="이메일" type="email" value={form.email} onChange={handleChange} name="email" />
             <InputField label="휴대폰" type="text" value={form.mobile} onChange={handleChange} name="mobile" />
             <button type="submit">회원가입</button>
+            <button type="button" onClick={handleGoToLogin} style={{ marginLeft: "1rem"}}>
+                로그인하기
+            </button>
         </form>
     );
 }
